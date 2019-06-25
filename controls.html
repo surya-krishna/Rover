@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>Bot Controller</title>
+		<style>
+			.controls{
+			    margin-top:15%;
+			}
+			.up{
+				position:relative;
+				margin:1%;
+			}
+			.down{
+			
+				position:relative;
+				margin:1%;
+			}
+			.middle{
+			
+				position:relative;
+				margin:1%;
+			}
+			.left{
+			display:inline-block;
+			position:relative;
+				margin:1%;
+			}
+			.right{
+			display:inline-block;
+			position:relative;
+				margin:1%;
+			}
+			.stop{
+			display:inline-block;
+			position:relative;
+				margin:1%;
+			}
+			.mdl-button--fab.mdl-button--colored {
+			    border-radius: 50%;
+				-webkit-mask-image: -webkit-radial-gradient(circle,white,black);
+				background: rgb(100,0,255);
+				color: rgb(255,255,255);
+				border-radius: 50%;
+				font-size: 24px;
+				font-weight:bolder;
+				height: 56px;
+				margin: auto;
+				min-width: 56px;
+				width: 56px;
+				padding: 0;
+				overflow: hidden;
+				box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+				position: relative;
+				line-height: normal;
+}
+
+			.mdl-button--fab1.mdl-button--colored1 {
+			    border-radius: 50%;
+				-webkit-mask-image: -webkit-radial-gradient(circle,white,black);
+				background: rgb(180,0,0);
+				color: rgb(255,255,255);
+				border-radius: 50%;
+				font-size: 24px;
+				height: 56px;
+				margin: auto;
+				min-width: 56px;
+				width: 56px;
+				padding: 0;
+				overflow: hidden;
+				box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+				position: relative;
+				line-height: normal;
+}
+		</style>
+	</head>
+	<body>
+	
+	<!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+	<center class="controls">
+	<div class="btn-group up">
+<button  class=" mdl-button--fab mdl-button--colored front" id='4'>
+  &uarr;
+</button></div>
+<div class="middle"><div class="left">
+<button  class=" mdl-button--fab  mdl-button--colored left" id='7'>
+ &larr;
+</button></div>
+
+<div class="stop">
+<button  class=" mdl-button--fab1   mdl-button--colored1 break" id='1'>
+  S</button></div>
+
+<div class="right">
+<button class=" mdl-button--fab   mdl-button--colored right" id='6'>
+  &rarr;
+</button></div></div>
+
+  <div class="down">
+<button class=" mdl-button--fab   mdl-button--colored back" id='5'>
+  &darr;
+</button></div>
+
+	</center>
+	<!-- button for pin 4 -->
+	<!--<button id="4" class="front">FOREWARD</button>
+	<button id="5" class="back">BACKWARD</button>
+	<button id="6" class="left">LEFT</button>
+	<button id="7" class="right">RIGHT</button>
+	<button id="1" class="break">BREAK</button>-->
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		var p;
+		  $(".break").click(function(){
+				
+			    p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+			});
+			
+			$(".front").click(function(){
+				
+			    p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+			});
+			$(".back").click(function(){
+				
+			    p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+			});
+			$(".left").click(function(){
+				
+				 p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+			});
+			$(".right").click(function(){
+				
+				 p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+			});
+		});
+	</script>
+	</body>
+</html>
